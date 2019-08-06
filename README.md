@@ -8,3 +8,6 @@
 * How can I change the mouse pointer theme from the command line?
  A DBase based solution using gsettings and dconf:
   [ask ubunty](https://askubuntu.com/questions/933073/how-can-i-change-the-mouse-pointer-theme-from-the-command-line)
+
+* Arch Wiki about cursor themes and the XTEST protocol:
+[](https://wiki.archlinux.org/index.php/Cursor_themes)

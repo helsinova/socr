@@ -5,9 +5,12 @@ SCR="$HOME/Documents/Translate/temp"
 mkdir -p $(dirname $SCR)
 ORIG_MICON=$(gsettings get org.gnome.desktop.interface cursor-theme)
 BUSY_MICON='redglass'
+ORIG_CURSZ=$(gsettings get org.gnome.desktop.interface cursor-size)
+BUSY_CURSZ=96
 
 gnome-screenshot -a -f $SCR.png
 
+gsettings set org.gnome.desktop.interface cursor-size $BUSY_CURSZ
 gsettings set org.gnome.desktop.interface cursor-theme $BUSY_MICON
 
 mogrify -modulate 100,0 -resize 400% $SCR.png
@@ -29,6 +32,7 @@ cat $SCR.txt |
 	xclip -selection clipboard
 #you can only scan one character at a time
 
+gsettings set org.gnome.desktop.interface cursor-size $ORIG_CURSZ
 gsettings set org.gnome.desktop.interface cursor-theme $ORIG_MICON
 
 exit $rc

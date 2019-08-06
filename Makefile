@@ -22,6 +22,7 @@ INSTALL_DIR_MAN  ?= ${INSTALL_DIR_BASE}/share/man
 BIN_SCRIPTS_SRC_DIR  := bin
 BIN_SCRIPTS          :=
 BIN_SCRIPTS          += socr.sh
+BIN_SCRIPTS          += socr_gnome_keybinding
 BIN_SCRIPTS_NOSFX    := $(patsubst %.sh, %, ${BIN_SCRIPTS})
 BIN_SCRIPTS_SRC      := $(patsubst %, ${BIN_SCRIPTS_SRC_DIR}/%, ${BIN_SCRIPTS})
 BIN_SCRIPTS_DST      := $(patsubst %, ${INSTALL_DIR_BIN}/%, ${BIN_SCRIPTS_NOSFX})
@@ -44,6 +45,7 @@ ${INSTALL_DIR_LIB}:
 	sudo mkdir $@
 
 install: ${LIB_SCRIPTS_DST} ${BIN_SCRIPTS_DST}
+	socr_gnome_keybinding
 	@echo "[${PROJECT}] is installed"
 
 uninstall:

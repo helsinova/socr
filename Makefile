@@ -1,3 +1,4 @@
+.DEFAULT_GOAL := install
 SHELL := /bin/bash
 MAKEPWD := $(shell pwd)
 ifeq (${MAKELEVEL},0)
@@ -23,6 +24,8 @@ BIN_SCRIPTS_SRC_DIR  := bin
 BIN_SCRIPTS          :=
 BIN_SCRIPTS          += socr.sh
 BIN_SCRIPTS          += spic.sh
+BIN_SCRIPTS          += xocr.sh
+BIN_SCRIPTS          += xpic.sh
 BIN_SCRIPTS          += gnome_keybinding
 BIN_SCRIPTS_NOSFX    := $(patsubst %.sh, %, ${BIN_SCRIPTS})
 BIN_SCRIPTS_SRC      := $(patsubst %, ${BIN_SCRIPTS_SRC_DIR}/%, ${BIN_SCRIPTS})
@@ -30,7 +33,7 @@ BIN_SCRIPTS_DST      := $(patsubst %, ${INSTALL_DIR_BIN}/%, ${BIN_SCRIPTS_NOSFX}
 
 LIB_SCRIPTS_SRC_DIR  := lib
 LIB_SCRIPTS          :=
-LIB_SCRIPTS_CMDS     := $(patsubst lib/%, % , $(shell ls ${LIB_SCRIPTS_SRC_DIR}/TBD-*.sh))
+#LIB_SCRIPTS_CMDS     := $(patsubst lib/%, % , $(shell ls ${LIB_SCRIPTS_SRC_DIR}/TBD-*.sh))
 LIB_SCRIPTS          += ${LIB_SCRIPTS_CMDS}
 LIB_SCRIPTS_NOSFX    := $(patsubst %.sh, %, ${LIB_SCRIPTS})
 LIB_SCRIPTS_SRC      := $(patsubst %, ${LIB_SCRIPTS_SRC_DIR}/%, ${LIB_SCRIPTS})

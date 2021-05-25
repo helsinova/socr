@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 # Dependencies: tesseract-ocr imagemagick gnome-screenshot xclip
 
 SCR="$HOME/Documents/Translate/temp"

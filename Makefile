@@ -43,14 +43,14 @@ ${INSTALL_DIR_LIB}/%: ${INSTALL_DIR_LIB} ${LIB_SCRIPTS_SRC_DIR}/%.sh
 	sudo cp $(patsubst ${INSTALL_DIR_LIB}/%, ${LIB_SCRIPTS_SRC_DIR}/%.sh, $@) $@
 
 ${INSTALL_DIR_LIB}:
-	sudo mkdir $@
+	sudo mkdir -p $@
 
 install: ${LIB_SCRIPTS_DST} ${BIN_SCRIPTS_DST}
 	@echo "[${PROJECT}] is installed"
 
 uninstall:
 	sudo rm ${BIN_SCRIPTS_DST}
-	sudo rm ${LIB_SCRIPTS_DST}
+	#sudo rm ${LIB_SCRIPTS_DST}
 	@echo "[${PROJECT}] is un-installed"
 
 

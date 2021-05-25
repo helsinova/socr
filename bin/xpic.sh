@@ -1,5 +1,8 @@
-#!/bin/bash
-# Dependencies: scrot xclip
+# !/bin/bash
+# Dependencies: scrot xclipBash (not Dash)
+
+[ -z $BASH_VERSION ] && echo "This scrip runs only under Bash" && exit 1 >&2
+# Perhaps run dpkg-reconfigure dash ?
 
 function _xpic_one() {
     xclip -selection clipboard -target image/png -i "$1"

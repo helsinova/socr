@@ -1,15 +1,22 @@
-#!/bin/bash
-# Dependencies: scrot tesseract-ocr imagemagick
+# !/bin/bash
+# Dependencies: scrot tesseract-ocr imagemagick Bash (not Dash)
+
+[ -z $BASH_VERSION ] && echo "This scrip runs only under Bash" && exit 1 >&2
+# Perhaps run dpkg-reconfigure dash ?
+
+touch /tmp/hello
 
 function _xocr_one() {
     echo "$1"
+    local TESSERACT_LANG=${TESSERACT_LANG-"eng"}
+
     local _fn_prefix="$HOME/Documents/Translate/temp"
     mkdir -p $(dirname $_fn_prefix)
 
     #should increase detection rate
     mogrify -modulate 100,0 -resize 400% "$1"
 
-    tesseract "$1" $_fn_prefix -psm 100 -l jpn
+    tesseract "$1" $_fn_prefix --dpi 100 -l "$TESSERACT_LANG"
 
     #you can only scan one character at a time
     cat $_fn_prefix.txt | xclip -selection clipboard

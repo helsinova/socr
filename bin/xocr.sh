@@ -5,7 +5,7 @@
 # Perhaps run dpkg-reconfigure dash ?
 
 function _xocr_one() {
-    local TESSERACT_LANG=${TESSERACT_LANG-"eng"}
+    local TESSERACT_LANG=${TESSERACT_LANG-"swe"}
 
     local _fn_prefix="$HOME/Documents/Translate/temp"
     mkdir -p $(dirname $_fn_prefix)

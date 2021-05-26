@@ -4,10 +4,7 @@
 [ -z $BASH_VERSION ] && echo "This scrip runs only under Bash" && exit 1 >&2
 # Perhaps run dpkg-reconfigure dash ?
 
-touch /tmp/hello
-
 function _xocr_one() {
-    echo "$1"
     local TESSERACT_LANG=${TESSERACT_LANG-"eng"}
 
     local _fn_prefix="$HOME/Documents/Translate/temp"

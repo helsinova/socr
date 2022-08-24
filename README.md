@@ -1,9 +1,22 @@
 #socr - clipart 2 ocr
 
-Scree-to-clipboard utilities
+Screen-to-clipboard utilities
+
+## X based (newer)
+
+These scripts are less dependant of which window system you're running than
+the older Gnome based. I.e. they should work with i3/fvwm etc.
+
+* xocr - takes a cut of screen, OCR:s it and place final text into clipboard
+* xpic - takes a cut of screen directly into clipboard
+
+## Gnome based (older)
+These scripts **may** work on you system if you have gnome installed but running
+another window system. If you don't run Gnome, consider using the newer scripts
+(see above) instead.
 
 * socr - takes a cut of screen, OCR:s it and place final text into clipboard
-* socr - takes a cut of screen directly into clipboard
+* spic - takes a cut of screen directly into clipboard
 
 ## Trace actuation:
 

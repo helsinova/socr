@@ -1,4 +1,4 @@
-#socr - clipart 2 ocr
+# socr - clipart 2 ocr
 
 Screen-to-clipboard utilities
 
@@ -11,7 +11,7 @@ the older Gnome based. I.e. they should work with i3/fvwm etc.
 * xpic - takes a cut of screen directly into clipboard
 
 ## Gnome based (older)
-These scripts **may** work on you system if you have gnome installed but running
+These scripts **may** work on your system if you have gnome installed but running
 another window system. If you don't run Gnome, consider using the newer scripts
 (see above) instead.
 
